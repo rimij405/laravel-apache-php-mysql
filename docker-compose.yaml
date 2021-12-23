@@ -19,6 +19,7 @@ services:
     adminer:
         depends_on:
             - database
+        container_name: laravel-app_adminer
         image: adminer
         restart: always
         ports:
@@ -28,7 +29,7 @@ services:
         depends_on:
             - database
             - adminer
-        container_name: php-apache
+        container_name: laravel-app_php
         build:
             context: ./web
         volumes:
